@@ -18,111 +18,332 @@
   --cyan: #67e8f9;
   --border: rgba(167,139,250,.2);
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
   font-family: Inter, "Segoe UI", Arial, sans-serif;
   line-height: 1.7;
 }
-a { color: inherit; text-decoration: none; }
-.container { width: min(1080px, 90%); margin: auto; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1080px, 90%);
+  margin: auto;
+}
+
 header {
-  position: sticky; top: 0; z-index: 10;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   background: rgba(11,16,32,.94);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(12px);
 }
+
 nav {
-  min-height: 72px; display: flex; align-items: center;
-  justify-content: space-between; gap: 20px;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
-.logo { font-size: 1.25rem; font-weight: 800; }
-.logo span { color: var(--purple); }
-.nav-links { display: flex; gap: 22px; align-items: center; }
-.nav-links a { color: var(--muted); font-size: .9rem; }
-.nav-links a:hover, a:hover { color: var(--cyan); }
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.logo span {
+  color: var(--purple);
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.nav-links a:hover,
+a:hover {
+  color: var(--cyan);
+}
+
 .menu-btn {
-  display: none; background: none; color: white;
-  border: 1px solid var(--border); border-radius: 8px;
-  padding: 7px 11px; font-size: 1.2rem; cursor: pointer;
+  display: none;
+  background: none;
+  color: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 11px;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
-section { padding: 76px 0; }
+
+section {
+  padding: 76px 0;
+}
+
 .hero {
-  min-height: 590px; display: flex; align-items: center;
+  min-height: 590px;
+  display: flex;
+  align-items: center;
   background:
     radial-gradient(ellipse at 85% 20%, rgba(103,232,249,.09), transparent 35%),
     radial-gradient(ellipse at 10% 60%, rgba(167,139,250,.13), transparent 40%);
 }
-.eyebrow { color: var(--cyan); letter-spacing: 2px; font-size: .8rem; text-transform: uppercase; }
-h1 { font-size: clamp(2.7rem, 7vw, 5rem); line-height: 1.1; margin: 18px 0; }
+
+.eyebrow {
+  color: var(--cyan);
+  letter-spacing: 2px;
+  font-size: .8rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(2.7rem, 7vw, 5rem);
+  line-height: 1.1;
+  margin: 18px 0;
+}
+
 .gradient {
   background: linear-gradient(90deg, var(--purple), var(--cyan));
-  color: transparent; background-clip: text;
+  color: transparent;
+  background-clip: text;
 }
-.hero p, .section-intro { color: var(--muted); max-width: 690px; }
-.hero p { font-size: 1.08rem; }
-.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+.hero p,
+.section-intro {
+  color: var(--muted);
+  max-width: 690px;
+}
+
+.hero p {
+  font-size: 1.08rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
 .btn {
-  display: inline-block; padding: 11px 18px; border-radius: 9px;
-  border: 1px solid var(--border); font-weight: 600; font-size: .92rem;
+  display: inline-block;
+  padding: 11px 18px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  font-weight: 600;
+  font-size: .92rem;
+  transition: transform .2s;
 }
-.btn.primary { background: linear-gradient(110deg, #a78bfa, #67e8f9); color: #101426; border: none; }
-.btn:hover { transform: translateY(-2px); }
-.section-title { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 8px; }
-.section-intro { margin-bottom: 30px; }
-.panel, .card {
-  background: var(--panel); border: 1px solid var(--border);
-  border-radius: 15px; padding: 23px;
+
+.btn.primary {
+  background: linear-gradient(110deg, #a78bfa, #67e8f9);
+  color: #101426;
+  border: none;
 }
-.card { display: flex; flex-direction: column; gap: 12px; }
-.card h3 { font-size: 1.15rem; }
-.card p, .panel p { color: var(--muted); font-size: .94rem; }
-.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-.skills-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-.skills-grid h3 { color: var(--cyan); font-size: 1rem; margin-bottom: 10px; }
-.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 8px;
+}
+
+.section-intro {
+  margin-bottom: 30px;
+}
+
+.panel,
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 23px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card h3 {
+  font-size: 1.15rem;
+}
+
+.card p,
+.panel p {
+  color: var(--muted);
+  font-size: .94rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.skills-grid h3 {
+  color: var(--cyan);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .tag {
-  border: 1px solid var(--border); color: #d8d6ff;
-  padding: 5px 9px; border-radius: 7px; font-size: .8rem;
+  border: 1px solid var(--border);
+  color: #d8d6ff;
+  padding: 5px 9px;
+  border-radius: 7px;
+  font-size: .8rem;
+  overflow-wrap: anywhere;
 }
-.card-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: auto; padding-top: 6px; }
-.card-links a { color: var(--cyan); font-size: .9rem; font-weight: 600; }
-.status { color: var(--cyan); font-size: .8rem; }
-.credential-issuer { color: var(--purple); font-size: .85rem; }
-.credential-id { color: var(--muted); font-size: .78rem; overflow-wrap: anywhere; }
-.contact-box { text-align: center; padding: 36px 20px; }
-.contact-box p { max-width: 580px; margin: 12px auto 22px; }
+
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.card-links a {
+  color: var(--cyan);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.status {
+  color: var(--cyan);
+  font-size: .8rem;
+}
+
+.credential-issuer {
+  color: var(--purple);
+  font-size: .85rem;
+}
+
+.credential-id {
+  color: var(--muted);
+  font-size: .78rem;
+  overflow-wrap: anywhere;
+}
+
+.contact-box {
+  text-align: center;
+  padding: 36px 20px;
+}
+
+.contact-box p {
+  max-width: 580px;
+  margin: 12px auto 22px;
+}
+
 footer {
-  border-top: 1px solid var(--border); padding: 24px 0;
-  color: var(--muted); font-size: .85rem; text-align: center;
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  color: var(--muted);
+  font-size: .85rem;
+  text-align: center;
 }
-@media (max-width: 800px) {
-  .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .nav-links { gap: 12px; }
-}
-@media (max-width: 600px) {
-  .menu-btn { display: block; }
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .nav-links {
-    display: none; position: absolute; top: 71px; left: 0; right: 0;
-    background: var(--panel); padding: 20px 5%;
-    flex-direction: column; align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 71px;
+    left: 0;
+    right: 0;
+    background: var(--panel);
+    padding: 20px 5%;
+    flex-direction: column;
+    align-items: flex-start;
     border-bottom: 1px solid var(--border);
   }
-  .nav-links.open { display: flex; }
-  .grid, .skills-grid { grid-template-columns: 1fr; }
-  section { padding: 55px 0; }
-  .hero { min-height: 520px; }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 55px 0;
+  }
+
+  .hero {
+    min-height: 520px;
+  }
 }
 </style>
 </head>
 
 <body>
+
 <header>
   <nav class="container">
-    <a class="logo" href="#home">Upasana<span>.</span></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <a class="logo" href="#home">Upasana S<span>.</span></a>
+
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+    >☰</button>
+
     <div class="nav-links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -135,41 +356,66 @@ footer {
 </header>
 
 <main>
+
+<!-- HOME -->
 <section class="hero" id="home">
   <div class="container">
     <div class="eyebrow">Hello, welcome to my portfolio</div>
+
     <h1>Hi, I'm <span class="gradient">Upasana S.</span></h1>
+
     <h2 style="font-size:clamp(1.2rem,3vw,1.7rem);margin-bottom:18px;">
       Computer Science &amp; Data Science Student
     </h2>
+
     <p>
-      Exploring software development, artificial intelligence and data analytics
-      through projects, certifications and continuous learning.
+      Exploring software development, artificial intelligence and data
+      analytics through projects, certifications and continuous learning.
     </p>
+
     <div class="actions">
       <a class="btn primary" href="#projects">Explore My Projects ↗</a>
-      <a class="btn" href="https://www.linkedin.com/in/upasana-s-b62820394/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-      <a class="btn" href="https://github.com/upasana-s7" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a
+        class="btn"
+        href="https://www.linkedin.com/in/upasana-s-b62820394/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >LinkedIn ↗</a>
+      <a
+        class="btn"
+        href="https://github.com/upasana-s7"
+        target="_blank"
+        rel="noopener noreferrer"
+      >GitHub ↗</a>
     </div>
   </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
   <div class="container">
-    <h2 class="section-title">About Me<span class="gradient">.</span></h2>
-    <p class="section-intro">A little about my background and interests.</p>
+    <h2 class="section-title">
+      About Me<span class="gradient">.</span>
+    </h2>
+
+    <p class="section-intro">
+      A little about my background and interests.
+    </p>
+
     <div class="panel">
       <p>
-        I'm a second-year Computer Science and Data Science engineering student
-        at Cambridge Institute of Technology, Bengaluru. I'm developing my
-        skills in programming, web technologies and data-related concepts
-        through academic learning, hands-on projects, certifications and
-        hackathons.
+        I'm a second-year Computer Science and Data Science engineering
+        student at Cambridge Institute of Technology, Bengaluru. I'm
+        developing my skills in programming, web technologies and
+        data-related concepts through academic learning, hands-on projects,
+        certifications and hackathons.
       </p>
+
       <br>
+
       <p>
-        I'm interested in software development, AI, machine learning and data
-        analytics. I enjoy learning new concepts, exploring practical
+        I'm interested in software development, AI, machine learning and
+        data analytics. I enjoy learning new concepts, exploring practical
         applications of technology and developing solutions to real-world
         problems. I'm looking forward to learning from others, collaborating
         on projects and contributing to technical communities.
@@ -178,192 +424,382 @@ footer {
   </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
   <div class="container">
-    <h2 class="section-title">Skills &amp; Technologies<span class="gradient">.</span></h2>
-    <p class="section-intro">Technologies I'm learning and exploring.</p>
+    <h2 class="section-title">
+      Skills &amp; Technologies<span class="gradient">.</span>
+    </h2>
+
+    <p class="section-intro">
+      Technologies and concepts I'm learning and exploring.
+    </p>
+
     <div class="skills-grid">
+
+      <!-- Programming Languages -->
       <div class="card">
-        <h3>Programming</h3>
+        <h3>Programming Languages</h3>
+
         <div class="tags">
-          <span class="tag">Python</span><span class="tag">Java</span>
-          <span class="tag">SQL</span><span class="tag">C</span><span class="tag">C++</span>
+          <span class="tag">Python · Foundational to Intermediate</span>
+          <span class="tag">Java · Currently Learning</span>
+          <span class="tag">C++ · Foundational</span>
         </div>
       </div>
+
+      <!-- Web Development -->
       <div class="card">
         <h3>Web Development</h3>
+
         <div class="tags">
-          <span class="tag">HTML</span><span class="tag">CSS</span>
-          <span class="tag">JavaScript</span><span class="tag">Frontend</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
         </div>
       </div>
+
+      <!-- Data and AI -->
       <div class="card">
         <h3>Data &amp; AI</h3>
+
         <div class="tags">
-          <span class="tag">Data Analysis</span><span class="tag">Data Visualization</span>
-          <span class="tag">AI</span><span class="tag">Machine Learning</span>
-          <span class="tag">Generative AI</span><span class="tag">Prompt Engineering</span>
+          <span class="tag">Artificial Intelligence · Learning</span>
+          <span class="tag">Machine Learning · Learning</span>
+          <span class="tag">Data Analysis · Learning</span>
+          <span class="tag">Data Visualization · Learning</span>
+          <span class="tag">Generative AI</span>
+          <span class="tag">Prompt Engineering</span>
         </div>
       </div>
+
+      <!-- Tools and Technologies -->
       <div class="card">
-        <h3>Tools &amp; Concepts</h3>
+        <h3>Tools &amp; Technologies</h3>
+
         <div class="tags">
-          <span class="tag">Git</span><span class="tag">GitHub</span>
-          <span class="tag">Streamlit</span><span class="tag">Gemini API</span>
-          <span class="tag">IBM watsonx.ai</span><span class="tag">Problem Solving</span>
+          <span class="tag">VS Code</span>
+          <span class="tag">Git</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">Google Gemini API</span>
+          <span class="tag">IBM watsonx.ai</span>
+          <span class="tag">IBM Bob</span>
+          <span class="tag">Autodesk Fusion 360</span>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
   <div class="container">
-    <h2 class="section-title">Featured Projects<span class="gradient">.</span></h2>
-    <p class="section-intro">A selection of projects I've worked on and explored.</p>
+    <h2 class="section-title">
+      Featured Projects<span class="gradient">.</span>
+    </h2>
+
+    <p class="section-intro">
+      A selection of projects I've worked on and explored.
+    </p>
+
     <div class="grid">
+
+      <!-- Voyara -->
       <article class="card">
         <span class="status">● In Progress</span>
+
         <h3>Voyara</h3>
+
         <p>
-          An ongoing Python-based AI travel assistant designed to help users
-          explore destinations and plan trips based on their interests,
-          preferences and trip duration.
+          An ongoing Python-based AI travel assistant designed to help
+          users explore destinations and plan trips based on their
+          interests, preferences and trip duration.
         </p>
+
         <div class="tags">
-          <span class="tag">Python</span><span class="tag">Gemini API</span>
-          <span class="tag">google-genai</span><span class="tag">python-dotenv</span>
+          <span class="tag">Python</span>
+          <span class="tag">Gemini API</span>
+          <span class="tag">google-genai</span>
+          <span class="tag">python-dotenv</span>
         </div>
       </article>
 
+      <!-- CodeHeal -->
       <article class="card">
         <h3>CodeHeal</h3>
+
         <p>
           An AI-assisted code debugging and improvement project developed
           during the IBM Bob 2.0 Hackathon. It focuses on diagnosing code
           issues, generating tests and exploring code improvements.
         </p>
+
         <div class="tags">
-          <span class="tag">Python</span><span class="tag">Streamlit</span>
-          <span class="tag">IBM watsonx.ai</span><span class="tag">IBM Granite</span>
+          <span class="tag">Python</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">IBM watsonx.ai</span>
+          <span class="tag">IBM Granite</span>
         </div>
+
         <div class="card-links">
-          <a href="https://codeheal-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
-          <a href="https://github.com/upasana-s7/CodeHeal" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a
+            href="https://codeheal-frontend.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Live Demo ↗</a>
+
+          <a
+            href="https://github.com/upasana-s7/CodeHeal"
+            target="_blank"
+            rel="noopener noreferrer"
+          >GitHub ↗</a>
         </div>
       </article>
 
+      <!-- Cinema Nook -->
       <article class="card">
         <h3>Cinema Nook</h3>
+
         <p>
-          A scrapbook-style movie web application for organizing and exploring
-          movies, with features for managing a personal movie collection and
-          interacting with movie entries.
+          A scrapbook-style movie web application for organizing and
+          exploring movies, with features for managing a personal movie
+          collection and interacting with movie entries.
         </p>
+
         <div class="tags">
-          <span class="tag">HTML</span><span class="tag">CSS</span>
-          <span class="tag">JavaScript</span><span class="tag">LocalStorage</span><span class="tag">PWA</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">LocalStorage</span>
+          <span class="tag">PWA</span>
         </div>
+
         <div class="card-links">
-          <a href="https://upasana-s7.github.io/Cinema-Nook/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
-          <a href="https://github.com/upasana-s7/Cinema-Nook" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a
+            href="https://upasana-s7.github.io/Cinema-Nook/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Live Demo ↗</a>
+
+          <a
+            href="https://github.com/upasana-s7/Cinema-Nook"
+            target="_blank"
+            rel="noopener noreferrer"
+          >GitHub ↗</a>
         </div>
       </article>
 
+      <!-- StudyRoom Pro -->
       <article class="card">
         <h3>StudyRoom Pro</h3>
+
         <p>
-          A simple web-based study platform designed to help students organize
-          and manage their learning.
+          A simple web-based study platform designed to help students
+          organize and manage their learning.
         </p>
+
         <div class="tags">
           <span class="tag">HTML</span>
         </div>
+
         <div class="card-links">
-          <a href="https://upasana-s7.github.io/studyroom-pro/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
-          <a href="https://github.com/upasana-s7/studyroom-pro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a
+            href="https://upasana-s7.github.io/studyroom-pro/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Live Demo ↗</a>
+
+          <a
+            href="https://github.com/upasana-s7/studyroom-pro"
+            target="_blank"
+            rel="noopener noreferrer"
+          >GitHub ↗</a>
         </div>
       </article>
+
     </div>
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="container">
-    <h2 class="section-title">Certifications &amp; Credentials<span class="gradient">.</span></h2>
-    <p class="section-intro">Courses and credentials from learning platforms and technology organizations.</p>
+    <h2 class="section-title">
+      Certifications &amp; Credentials<span class="gradient">.</span>
+    </h2>
+
+    <p class="section-intro">
+      Courses and credentials from learning platforms and technology organizations.
+    </p>
+
     <div class="grid">
+
+      <!-- IBM Bob Hackathon -->
       <article class="card">
         <h3>IBM Bob 2.0 Hackathon</h3>
         <span class="credential-issuer">lablab.ai · September 2026</span>
+
         <p>Certificate of Completion</p>
-        <p class="credential-id">Credential ID: CMULAPZNZOOVS6015AAGGLB</p>
-        <div class="card-links"><a href="https://lablab.ai/u/@upasanas7/ai-hackathons/ibm-bob-2-hackathon/certificate" target="_blank" rel="noopener noreferrer">View Credential ↗</a></div>
+
+        <p class="credential-id">
+          Credential ID: CMULAPZNZOOVS6015AAGGLB
+        </p>
+
+        <div class="card-links">
+          <a
+            href="https://lablab.ai/u/@upasanas7/ai-hackathons/ibm-bob-2-hackathon/certificate"
+            target="_blank"
+            rel="noopener noreferrer"
+          >View Credential ↗</a>
+        </div>
       </article>
 
+      <!-- NASA Open Science Essentials -->
       <article class="card">
         <h3>Open Science Essentials</h3>
         <span class="credential-issuer">NASA · September 2026</span>
+
         <p>NASA Open Science course</p>
-        <div class="card-links"><a href="https://www.credly.com/badges/175fe228-9813-4167-a595-11f45efaaced/linked_in_profile" target="_blank" rel="noopener noreferrer">View Credential ↗</a></div>
+
+        <div class="card-links">
+          <a
+            href="https://www.credly.com/badges/175fe228-9813-4167-a595-11f45efaaced/linked_in_profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >View Credential ↗</a>
+        </div>
       </article>
 
+      <!-- NASA Open Science 101 -->
       <article class="card">
         <h3>Open Science 101</h3>
         <span class="credential-issuer">NASA · September 2026</span>
+
         <p>NASA Open Science course</p>
-        <div class="card-links"><a href="https://www.credly.com/badges/f1e9529c-bd31-491a-88fe-909335363b37/linked_in_profile" target="_blank" rel="noopener noreferrer">View Credential ↗</a></div>
+
+        <div class="card-links">
+          <a
+            href="https://www.credly.com/badges/f1e9529c-bd31-491a-88fe-909335363b37/linked_in_profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >View Credential ↗</a>
+        </div>
       </article>
 
+      <!-- Google Prompting Essentials -->
       <article class="card">
         <h3>Google Prompting Essentials</h3>
         <span class="credential-issuer">Google · September 2026</span>
+
         <p>Specialization certificate</p>
-        <p class="credential-id">Credential ID: 32Y81TQFWS1V</p>
-        <div class="card-links"><a href="https://www.coursera.org/account/accomplishments/specialization/32Y81TQFWS1V" target="_blank" rel="noopener noreferrer">View Credential ↗</a></div>
+
+        <p class="credential-id">
+          Credential ID: 32Y81TQFWS1V
+        </p>
+
+        <div class="card-links">
+          <a
+            href="https://www.coursera.org/account/accomplishments/specialization/32Y81TQFWS1V"
+            target="_blank"
+            rel="noopener noreferrer"
+          >View Credential ↗</a>
+        </div>
       </article>
 
+      <!-- Google AI Essentials -->
       <article class="card">
         <h3>Google AI Essentials</h3>
         <span class="credential-issuer">Google · September 2026</span>
+
         <p>Specialization certificate</p>
-        <p class="credential-id">Credential ID: U8HZA29STZC0</p>
-        <div class="card-links"><a href="https://www.coursera.org/account/accomplishments/specialization/U8HZA29STZC0" target="_blank" rel="noopener noreferrer">View Credential ↗</a></div>
+
+        <p class="credential-id">
+          Credential ID: U8HZA29STZC0
+        </p>
+
+        <div class="card-links">
+          <a
+            href="https://www.coursera.org/account/accomplishments/specialization/U8HZA29STZC0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >View Credential ↗</a>
+        </div>
       </article>
 
+      <!-- Kaggle Python -->
       <article class="card">
         <h3>Python</h3>
         <span class="credential-issuer">Kaggle · August 2026</span>
+
         <p>Kaggle Learn certificate</p>
-        <div class="card-links"><a href="https://www.kaggle.com/learn/certification/upasanas777/python" target="_blank" rel="noopener noreferrer">View Credential ↗</a></div>
+
+        <div class="card-links">
+          <a
+            href="https://www.kaggle.com/learn/certification/upasanas777/python"
+            target="_blank"
+            rel="noopener noreferrer"
+          >View Credential ↗</a>
+        </div>
       </article>
 
+      <!-- IBM AI Fundamentals -->
       <article class="card">
         <h3>AI Fundamentals: Foundations for Understanding AI</h3>
         <span class="credential-issuer">IBM · August 2026</span>
+
         <p>Digital badge</p>
-        <p class="credential-id">Credential ID: PWID-B1038700</p>
-        <div class="card-links"><a href="https://www.credly.com/badges/69292f55-87a4-4b62-85b2-25ffc62a9c2a/linked_in_profile" target="_blank" rel="noopener noreferrer">View Credential ↗</a></div>
+
+        <p class="credential-id">
+          Credential ID: PWID-B1038700
+        </p>
+
+        <div class="card-links">
+          <a
+            href="https://www.credly.com/badges/69292f55-87a4-4b62-85b2-25ffc62a9c2a/linked_in_profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >View Credential ↗</a>
+        </div>
       </article>
+
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="panel contact-box">
-      <h2 class="section-title">Let's Connect<span class="gradient">.</span></h2>
+      <h2 class="section-title">
+        Let's Connect<span class="gradient">.</span>
+      </h2>
+
       <p>
         I'm always interested in learning, collaborating on projects and
         connecting with people in technology. Feel free to reach out!
       </p>
+
       <div class="actions" style="justify-content:center">
-        <a class="btn primary" href="https://www.linkedin.com/in/upasana-s-b62820394/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
-        <a class="btn" href="https://github.com/upasana-s7" target="_blank" rel="noopener noreferrer">Explore GitHub ↗</a>
+        <a
+          class="btn primary"
+          href="https://www.linkedin.com/in/upasana-s-b62820394/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Connect on LinkedIn ↗</a>
+
+        <a
+          class="btn"
+          href="https://github.com/upasana-s7"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Explore GitHub ↗</a>
       </div>
     </div>
   </div>
 </section>
+
 </main>
 
 <footer>
@@ -388,5 +824,6 @@ navLinks.querySelectorAll("a").forEach(link => {
   });
 });
 </script>
+
 </body>
 </html>
